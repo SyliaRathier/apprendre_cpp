@@ -1,3 +1,4 @@
+debug/car.o
 debug/edge.o
 debug/graph.o
 debug/graphview.o
@@ -7,7 +8,6 @@ debug/mainwindow.o
 debug/mapoverlay.o
 debug/node.o
 debug/utils.o
-debug/vehicle.o
 debug/qrc_resources.o
 debug/moc_graphview.o
 debug/moc_jsonreader.o

@@ -7,5 +7,6 @@
         <file>map2.png</file>
         <file>QmlMaps.qml</file>
         <file>GraphView.qml</file>
+        <file>map3.jpg</file>
     </qresource>
 </RCC>

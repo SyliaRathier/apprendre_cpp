@@ -14,6 +14,9 @@ GraphView::GraphView(QWidget *parent)
     setDragMode(QGraphicsView::ScrollHandDrag);
     setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
 
+    //scene->setBackgroundBrush(Qt::lightGray); // Vous pouvez changer la couleur ici
+
+
     // Timer pour mettre à jour la position des voitures
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &GraphView::updateCars);
@@ -135,15 +138,34 @@ void GraphView::checkProximityAndColorCars() {
 
 void GraphView::adjustView() {
     fitInView(scene->itemsBoundingRect(), Qt::KeepAspectRatio);
-    scale(1.5, 1.5); // Augmenter le zoom de base
+    scale(1, 1); // Augmenter le zoom de base
 }
 
+void GraphView::reflectGraph(bool horizontal, bool vertical) {
+    QTransform transform;
+    if (horizontal) {
+        transform.scale(-1, 1);
+    }
+    if (vertical) {
+        transform.scale(1, -1);
+    }
+    setTransform(transform, true);
+}
+
+
 void GraphView::wheelEvent(QWheelEvent *event) {
-    const double scaleFactor = 1.15;  // Facteur de zoom
+    const double scaleFactor = 1.05;  // Facteur de zoom
 
     if (event->angleDelta().y() > 0) {
         scale(scaleFactor, scaleFactor);  // Zoom avant
     } else {
         scale(1.0 / scaleFactor, 1.0 / scaleFactor);  // Zoom arrière
     }
+}
+
+void GraphView::rotateGraph(double angle) {
+    // Appliquer une rotation à la scène
+    QTransform transform;
+    transform.rotate(angle);
+    setTransform(transform, true);
 }

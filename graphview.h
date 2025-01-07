@@ -17,6 +17,10 @@ public:
     void setGraph(const Graph &graph, double minLon, double minLat, double scale);
     void setMap(const QPixmap &mapImage);
     void adjustView();
+    void rotateGraph(double angle); // Méthode pour appliquer une rotation
+    void reflectGraph(bool horizontal, bool vertical); // Méthode pour appliquer une réflexion
+
+
 
 protected:
     void wheelEvent(QWheelEvent *event) override;

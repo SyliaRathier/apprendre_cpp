@@ -1,3 +1,4 @@
+release/car.o
 release/edge.o
 release/graph.o
 release/graphview.o
@@ -7,7 +8,6 @@ release/mainwindow.o
 release/mapoverlay.o
 release/node.o
 release/utils.o
-release/vehicle.o
 release/qrc_resources.o
 release/moc_graphview.o
 release/moc_jsonreader.o
