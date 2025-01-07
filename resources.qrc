@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mulhouse.json</file>
+        <file>test.json</file>
+        <file>map.png</file>
+        <file>maps2.png</file>
+        <file>map2.png</file>
+        <file>QmlMaps.qml</file>
+        <file>GraphView.qml</file>
+    </qresource>
+</RCC>
